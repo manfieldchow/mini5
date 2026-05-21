@@ -1,10 +1,11 @@
 {
     "name": "minibeampixel",
     "version": "0.1.0",
-    "description": "Simple LED pixel helpers for the micro:bit 5x5 matrix",
+    "description": "LED pixel helpers for the micro:bit matrix and WS2812B NeoPixel strips",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "neopixel": "github:microsoft/pxt-neopixel#v0.7.6"
     },
     "files": [
         "README.md",

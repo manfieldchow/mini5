@@ -1,8 +1,12 @@
 # MiniBeam Pixel
 
-A simple MakeCode extension that adds a few custom blocks for working with the micro:bit 5×5 LED matrix.
+A simple MakeCode extension for the micro:bit 5×5 LED matrix and WS2812B NeoPixel strips.
+
+This extension depends on the official [NeoPixel extension](https://github.com/microsoft/pxt-neopixel), which drives WS2812B LEDs over a single data pin.
 
 ## Blocks
+
+### Onboard LED
 
 | Block | What it does |
 |-------|----------------|
@@ -10,13 +14,34 @@ A simple MakeCode extension that adds a few custom blocks for working with the m
 | **draw horizontal line on row** | Light every LED in a single row |
 | **invert all pixels** | Flip the whole matrix (on ↔ off) |
 
+### WS2812B
+
+| Block | What it does |
+|-------|----------------|
+| **create WS2812B strip on pin with N LEDs** | Create a strip variable (GRB format) |
+| **set WS2812B pixel index to color** | Set one LED and refresh the strip |
+| **show WS2812B color** | Fill the whole strip with one color |
+| **clear WS2812B strip** | Turn all strip LEDs off |
+
 ## Example
+
+Onboard matrix:
 
 ```typescript
 minibeampixel.setPixel(2, 2, true)
 minibeampixel.drawHorizontalLine(0)
 basic.pause(500)
 minibeampixel.invertAll()
+```
+
+WS2812B strip on pin P0:
+
+```typescript
+let strip = minibeampixel.createWs2812Strip(DigitalPin.P0, 8)
+minibeampixel.showWs2812Color(strip, NeoPixelColors.Red)
+minibeampixel.setWs2812Pixel(strip, 0, NeoPixelColors.Green)
+basic.pause(500)
+minibeampixel.clearWs2812Strip(strip)
 ```
 
 ## Use in MakeCode
