@@ -1,6 +1,6 @@
 {
     "name": "minibeampixel",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "LED pixel helpers for the micro:bit matrix and WS2812B NeoPixel strips",
     "license": "MIT",
     "dependencies": {
