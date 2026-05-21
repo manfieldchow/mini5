@@ -66,42 +66,5 @@ namespace minibeampixel {
         return neopixel.create(pin, numLeds, NeoPixelMode.RGB)
     }
 
-    /**
-     * Set one WS2812B LED color and update the strip.
-     * @param strip the WS2812B strip
-     * @param index LED index from 0
-     * @param color color from the NeoPixel palette
-     */
-    //% blockId=minibeampixel_set_ws2812 block="$strip|set WS2812B pixel $index to %color=neopixel_colors"
-    //% strip.defl=strip
-    //% index.min=0
-    //% group="WS2812B"
-    export function setWs2812Pixel(strip: neopixel.Strip, index: number, color: NeoPixelColors): void {
-        strip.setPixelColor(index, neopixel.colors(color))
-        strip.show()
-    }
-
-    /**
-     * Fill the whole WS2812B strip with one color.
-     * @param strip the WS2812B strip
-     * @param color color from the NeoPixel palette
-     */
-    //% blockId=minibeampixel_show_ws2812 block="$strip|show WS2812B color %color=neopixel_colors"
-    //% strip.defl=strip
-    //% group="WS2812B"
-    export function showWs2812Color(strip: neopixel.Strip, color: NeoPixelColors): void {
-        strip.showColor(neopixel.colors(color))
-    }
-
-    /**
-     * Turn off all WS2812B LEDs.
-     * @param strip the WS2812B strip
-     */
-    //% blockId=minibeampixel_clear_ws2812 block="$strip|clear WS2812B strip"
-    //% strip.defl=strip
-    //% group="WS2812B"
-    export function clearWs2812Strip(strip: neopixel.Strip): void {
-        strip.clear()
-        strip.show()
-    }
+ 
 }
